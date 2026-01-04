@@ -10283,7 +10283,7 @@ header {
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: white;
+  color: #333;
 }
 .jumbotron h1 {
   margin-bottom: 20px;
@@ -10308,7 +10308,8 @@ header {
 .marketing .row:last-child {
   margin-bottom: 0;
 }
-.marketing h4 [class*=" icon-"], .marketing h4 [class^=icon-] {
+.marketing h4 [class*=" icon-"],
+.marketing h4 [class^=icon-] {
   margin-right: 5px;
   vertical-align: -10%;
   font-size: 28px;
