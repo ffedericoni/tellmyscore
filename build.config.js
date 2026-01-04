@@ -19,12 +19,12 @@ module.exports = {
    * app's unit tests.
    */
   app_files: {
-    js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
-    jsunit: [ 'src/**/*.spec.js' ],
+    js: ['src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js'],
+    jsunit: ['src/**/*.spec.js'],
 
-    atpl: [ 'src/app/**/*.tpl.html' ],
+    atpl: ['src/app/**/*.tpl.html'],
 
-    html: [ 'src/index.html' ],
+    html: ['src/index.html'],
     scss: 'src/sass/main.scss'
   },
 
@@ -33,7 +33,7 @@ module.exports = {
    */
   test_files: {
     js: [
-      'node_modules/@bower_components/angular-mocks/angular-mocks.js'
+      'node_modules/angular-mocks/angular-mocks.js'
     ]
   },
 
@@ -57,34 +57,33 @@ module.exports = {
    */
   vendor_files: {
     js: [
-        'node_modules/@bower_components/jquery/dist/jquery.min.js',
-        'node_modules/@bower_components/angular/angular.js',
-        'node_modules/@bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-        'node_modules/@bower_components/angular-ui-router/release/angular-ui-router.js',
-        'node_modules/@bower_components/angular-ui-utils/modules/route/route.js',
-        'node_modules/@bower_components/jquery-ui/jquery-ui.min.js',
-        'node_modules/@bower_components/angular-ui-sortable/sortable.min.js',
-        'node_modules/@bower_components/moment/min/moment-with-locales.min.js',
-        'node_modules/@bower_components/angular-moment/angular-moment.min.js',
-        'node_modules/@bower_components/angular-animate/angular-animate.min.js',
-        'node_modules/@bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js',
-        'node_modules/@bower_components/ngstorage/ngStorage.min.js'
+      'node_modules/jquery/dist/jquery.min.js',
+      'node_modules/angular/angular.js',
+      'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+      'node_modules/angular-ui-router/release/angular-ui-router.js',
+      'node_modules/jquery-ui-dist/jquery-ui.min.js',
+      'node_modules/angular-ui-sortable/dist/sortable.min.js',
+      'node_modules/moment/min/moment-with-locales.min.js',
+      'node_modules/angular-moment/angular-moment.min.js',
+      'node_modules/angular-animate/angular-animate.min.js',
+
+      'node_modules/ngstorage/ngStorage.min.js'
     ],
     css: [
     ],
     assets: [
     ],
     fonts: [
-        'node_modules/@bower_components/font-awesome/fonts/*'
+      'node_modules/font-awesome/fonts/*'
     ]
   },
 
-    appcache_literals: [
-        'fonts/fontawesome-webfont.eot?v=4.7.0',
-        'fonts/fontawesome-webfont.eot?#iefix&v=4.7.0',
-        'fonts/fontawesome-webfont.woff?v=4.7.0',
-        'fonts/fontawesome-webfont.woff2?v=4.7.0',
-        'fonts/fontawesome-webfont.ttf?v=4.7.0',
-        'fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular'
-    ]
+  appcache_literals: [
+    'fonts/fontawesome-webfont.eot?v=4.7.0',
+    'fonts/fontawesome-webfont.eot?#iefix&v=4.7.0',
+    'fonts/fontawesome-webfont.woff?v=4.7.0',
+    'fonts/fontawesome-webfont.woff2?v=4.7.0',
+    'fonts/fontawesome-webfont.ttf?v=4.7.0',
+    'fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular'
+  ]
 };

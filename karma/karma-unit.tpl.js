@@ -1,4 +1,4 @@
-module.exports = function ( karma ) {
+module.exports = function (karma) {
   karma.set({
     /**
      * From where to look for files, starting with the location of this file.
@@ -9,17 +9,17 @@ module.exports = function ( karma ) {
      * This is the list of file patterns to load into the browser during testing.
      */
     files: [
-      <% scripts.forEach( function ( file ) { %>'<%= file %>',
+      <% scripts.forEach(function (file) { %> '<%= file %>',
       <% }); %>
-      'src/**/*.js',
+    'src/**/*.js',
     ],
     exclude: [
-      'src/assets/**/*.js'
-    ],
-    frameworks: [ 'jasmine' ],
-    plugins: [ 'karma-jasmine', 'karma-firefox-launcher' ],
+    'src/assets/**/*.js'
+  ],
+    frameworks: ['jasmine'],
+    plugins: ['karma-jasmine', 'karma-chrome-launcher'],
     preprocessors: {
-    },
+  },
 
     /**
      * How to report, by default.
@@ -53,7 +53,7 @@ module.exports = function ( karma ) {
      * the aesthetic advantage of not launching a browser every time you save.
      */
     browsers: [
-      'Firefox'
-    ]
+    'Chrome'
+  ]
   });
 };

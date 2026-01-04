@@ -1,0 +1,33 @@
+<div class="modal-header">
+    <h3 class="modal-title">TTS Settings</h3>
+</div>
+<div class="modal-body">
+    <form>
+        <div class="form-group">
+            <label>Rate (Speed): {{settings.rate}}</label>
+            <input type="range" class="form-control" min="0.5" max="2" step="0.1" ng-model="settings.rate">
+        </div>
+        <div class="form-group">
+            <label>Pitch: {{settings.pitch}}</label>
+            <input type="range" class="form-control" min="0" max="2" step="0.1" ng-model="settings.pitch">
+        </div>
+        <div class="form-group">
+            <label>Language</label>
+            <select class="form-control" ng-model="settings.language" ng-change="updateVoices()">
+                <option value="en-US">English</option>
+                <option value="it-IT">Italiano</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Voice</label>
+            <select class="form-control" ng-model="settings.voiceURI"
+                ng-options="voice.voiceURI as voice.name for voice in voices">
+                <option value="">Default</option>
+            </select>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-info" type="button" ng-click="test()">Test Voice</button>
+    <button class="btn btn-primary" type="button" ng-click="ok()">Close</button>
+</div>
