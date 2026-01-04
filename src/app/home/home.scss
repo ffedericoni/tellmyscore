@@ -10,7 +10,7 @@
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: white;
+  color: #333;
 
   h1 {
     margin-bottom: 20px;
@@ -26,9 +26,9 @@
   }
 
   .social-buttons {
-      position: absolute;
-      right: 10px;
-      bottom: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
   }
 }
 
@@ -41,7 +41,8 @@
     margin-bottom: 0;
   }
 
-  h4 [class*=" icon-"], h4 [class^="icon-"] {
+  h4 [class*=" icon-"],
+  h4 [class^="icon-"] {
     margin-right: 5px;
     vertical-align: -10%;
     font-size: 28px;
