@@ -1,0 +1,85 @@
+<div class="container">
+    <!-- Editable Title -->
+    <h1>
+        <input [(ngModel)]="title" (ngModelChange)="title.set($event)" class="form-control input-lg"
+            style="border:none;box-shadow:none;background:transparent;padding:0;height:auto;">
+    </h1>
+
+    <div *ngIf="players().length === 0" class="alert alert-danger">
+        No players defined. <a routerLink="/players" class="alert-link">Add Players</a> first.
+    </div>
+
+    <p *ngIf="running()">Started {{ started() | date:'short' }}</p>
+
+    <div class="scores-table" *ngIf="players().length > 0">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Round</th>
+                    <th *ngFor="let player of players()" [class.success]="winners().includes(player.id)">
+                        {{player.name}}
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Totals</th>
+                    <th class="totals number" *ngFor="let player of players()"
+                        [class.success]="winners().includes(player.id)">
+                        {{totals()[player.id] || 0}}
+                    </th>
+                    <th></th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr *ngFor="let row of rows(); let i = index; let isLast = last" [class.active]="isLast && running()"
+                    [class.completed]="!isLast || !running()">
+                    <th>{{i + 1}}</th>
+                    <td class="number" *ngFor="let player of players()">
+                        <form (submit)="newRow()">
+                            <input class="form-control score-input" type="tel" [(ngModel)]="row[player.id]"
+                                [ngModelOptions]="{standalone: true}" (change)="updateTotals(player)"
+                                [disabled]="!!finished()">
+                        </form>
+                    </td>
+                    <td>
+                        <button *ngIf="running() && isLast" class="btn btn-success" (click)="newRow()">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Winners Alert -->
+    <div *ngIf="winners().length > 0" class="alert alert-success">
+        <span *ngIf="winners().length > 1">It's a tie!</span>
+        <span *ngIf="winners().length === 1">Winner!</span>
+        <!-- Name pipes needed or simple lookup -->
+    </div>
+
+    <!-- Toolbar -->
+    <div *ngIf="players().length > 0" class="toolbar-right">
+        <button class="btn btn-info" (click)="announce()">
+            <i class="fa fa-volume-up"></i> Announce
+        </button>
+
+        <button class="btn btn-default" *ngIf="!running() && finished()" (click)="resume()">
+            <i class="fa fa-history"></i> Resume
+        </button>
+
+        <button class="btn btn-primary" *ngIf="!running()" (click)="start()">
+            <i class="fa fa-caret-square-o-right"></i> Start <span *ngIf="finished()">New</span>
+        </button>
+
+        <button class="btn btn-danger" *ngIf="running()" (click)="abort()">
+            <i class="fa fa-trash-o"></i> Abort
+        </button>
+
+        <button class="btn btn-success" *ngIf="running()" (click)="finish()">
+            <i class="fa fa-check-square-o"></i> Finish
+        </button>
+    </div>
+</div>

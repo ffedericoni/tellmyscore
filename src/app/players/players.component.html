@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Manage Players</h1>
+    <p class="show-after-animation" *ngIf="players().length === 0">No players defined</p>
+
+    <!-- Use simple list for now, sortable later with cdkDropList -->
+    <div class="list-group">
+        <div class="list-group-item" *ngFor="let player of players()">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a class="btn btn-default"><i class="fa fa-sort"></i></a>
+                </span>
+                <input type="text" class="form-control" placeholder="Player Name" [(ngModel)]="player.name"
+                    (change)="updatePlayer(player)">
+                <span class="input-group-btn">
+                    <button class="btn btn-danger" type="button" (click)="removePlayer(player)">
+                        <span title="Remove Player"><i class="fa fa-trash-o"></i></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <h2>Add Player</h2>
+    <form (ngSubmit)="addPlayer()">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="New Player Name" required [(ngModel)]="newPlayerName"
+                name="newPlayerName">
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                    <span title="Add Player"><i class="fa fa-plus"></i></span>
+                </button>
+            </span>
+        </div>
+    </form>
+</div>

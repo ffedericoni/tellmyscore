@@ -4,10 +4,10 @@
  * build process will exclude all `.spec.js` files from the build
  * automatically.
  */
-describe( 'home section', function() {
-  beforeEach( module( 'ngScorekeeper.games' ) );
+describe('home section', function () {
+  beforeEach(angular.mock.module('ngScorekeeper.home'));
 
-  it( 'should have a dummy test', inject( function() {
-    expect( true ).toBeTruthy();
+  it('should have a dummy test', inject(function () {
+    expect(true).toBeTruthy();
   }));
 });

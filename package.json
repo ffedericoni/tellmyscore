@@ -1,57 +1,36 @@
 {
-  "author": "Andreas Flack",
   "name": "scorekeeper",
-  "version": "0.0.11",
-  "homepage": "https://flack.github.com/scorekeeper",
-  "bugs": "https://github.com/flack/scorekeeper/issues",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:flack/scorekeeper.git"
-  },
-  "devDependencies": {
-    "grunt": "^1.6.1",
-    "grunt-appcache": "^0.2",
-    "grunt-bump": "~0.7",
-    "grunt-cli": "^1.5.0",
-    "grunt-contrib-clean": "^1.0",
-    "grunt-contrib-concat": "^1.0",
-    "grunt-contrib-copy": "^1.0",
-    "grunt-contrib-jshint": "^1.0",
-    "grunt-contrib-less": "^1.0",
-    "grunt-contrib-uglify": "^1.0",
-    "grunt-contrib-watch": "^1.0",
-    "grunt-gh-pages": "^2.0",
-    "grunt-html2js": "^0.5",
-    "grunt-karma": "^4.0.2",
-    "grunt-ng-annotate": "^4.0.0",
-    "grunt-sass": "^4.0.1",
-    "jasmine-core": "^2.9.1",
-    "karma": "^6.4.4",
-    "karma-chrome-launcher": "^3.2.0",
-    "karma-firefox-launcher": "^1.0",
-    "karma-jasmine": "^1.0",
-    "sass": "^1.97.1"
-  },
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "test": "grunt build"
-  },
-  "engines": {
-    "yarn": ">= 1.0.0"
+    "start": "vite",
+    "build": "vite build",
+    "test": "vitest --config vite.config.ts"
   },
   "dependencies": {
-    "angular": "1.6",
-    "angular-animate": "1.6",
-    "angular-mocks": "1.6",
-    "angular-moment": "^1.3.0",
-    "angular-translate": "^2.18.1",
-    "angular-ui-bootstrap": "^2.5.6",
-    "angular-ui-router": "^1.1.2",
-    "angular-ui-sortable": "^0.19.0",
-    "bootstrap-sass": "^3.4.3",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.7.1",
-    "jquery-ui-dist": "^1.13.3",
-    "moment": "^2.30.1",
-    "ngstorage": "^0.3.11"
+    "@angular/animations": "^19.0.0",
+    "@angular/common": "^19.0.0",
+    "@angular/compiler": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "@angular/platform-browser": "^19.0.0",
+    "@angular/platform-browser-dynamic": "^19.0.0",
+    "@angular/router": "^19.0.0",
+    "bootstrap": "^5.3.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@analogjs/vite-plugin-angular": "^1.10.0",
+    "@angular/build": "^21.0.4",
+    "@angular/compiler-cli": "^19.0.0",
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^2.1.0",
+    "jsdom": "^25.0.0",
+    "sass": "^1.70.0",
+    "typescript": "~5.6.0",
+    "vite": "^7.3.0",
+    "vitest": "^2.1.0"
   }
 }

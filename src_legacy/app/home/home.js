@@ -1,6 +1,8 @@
 angular.module('ngScorekeeper.home', [
   'ui.router'
 ])
+  .run(function () { console.log('ngScorekeeper.home RUN BLOCK'); }) // verification
+
 
   .config(function config($stateProvider) {
     $stateProvider.state('home', {
