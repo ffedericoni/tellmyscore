@@ -10271,19 +10271,20 @@ header {
   float: right;
 }
 
-.intro {
-  background-image: url("home-bg.jpg");
-  background-size: cover;
-  padding: 40px 0;
-  margin-bottom: 80px;
+.hero {
+  background: linear-gradient(135deg, rgb(47.5247933884, 112.9834710744, 169.4752066116) 0%, #428bca 100%);
+  color: white;
+  padding: 60px 0;
+  margin-bottom: 40px;
   margin-top: -20px;
   position: relative;
+  text-align: center;
 }
 
 .jumbotron {
-  text-align: center;
   background-color: transparent;
-  color: #333;
+  color: inherit;
+  padding: 0;
 }
 .jumbotron h1 {
   margin-bottom: 20px;
