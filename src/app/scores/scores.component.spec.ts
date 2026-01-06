@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ScoresComponent } from './scores.component';
 import { StorageService } from '../shared/storage.service';
 import { provideRouter } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('ScoresComponent', () => {
     let component: ScoresComponent;
@@ -10,7 +11,7 @@ describe('ScoresComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [ScoresComponent],
+            imports: [ScoresComponent, TranslateModule.forRoot()],
             providers: [StorageService, provideRouter([])]
         }).compileComponents();
 

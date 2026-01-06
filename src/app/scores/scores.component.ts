@@ -1,13 +1,16 @@
 import { Component, inject, computed, signal, effect } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { StorageService, Player } from '../shared/storage.service';
 
+import { SettingsComponent } from './settings/settings.component';
+
 @Component({
     selector: 'app-scores',
     standalone: true,
-    imports: [CommonModule, FormsModule, RouterModule],
+    imports: [CommonModule, FormsModule, RouterModule, SettingsComponent, TranslateModule],
     templateUrl: './scores.component.html',
     styleUrls: ['./scores.component.scss']
 })
@@ -28,6 +31,7 @@ export class ScoresComponent {
     winners = signal<string[]>([]);
     totals = signal<{ [key: string]: number }>({});
     announcementText = signal('');
+    showSettings = signal(false);
 
     constructor() {
         // Init logic
@@ -154,6 +158,61 @@ export class ScoresComponent {
 
     // TTS Logic partial port
     announce() {
-        // ... implementation similar to legacy, using window.speechSynthesis
+        // Prepare data
+        const currentTotals = this.totals();
+        const sortedPlayers = [...this.players()].map(p => ({
+            name: p.name,
+            score: currentTotals[p.id] || 0
+        })).sort((a, b) => b.score - a.score);
+
+        // Determine language
+        const ttsSettings = this.tts();
+        let lang = ttsSettings?.language;
+
+        if (!lang) {
+            const browserLang = navigator.language;
+            lang = (browserLang && browserLang.indexOf('it') === 0) ? 'it-IT' : 'en-US';
+        }
+
+        // Construct text
+        let text = "";
+        if (lang === 'it-IT') {
+            text = "I punteggi attuali sono: ";
+            for (const p of sortedPlayers) {
+                const unit = (p.score === 1) ? " punto. " : " punti. ";
+                text += `${p.name} con ${p.score}${unit}`;
+            }
+        } else {
+            text = "The current scores are: ";
+            for (const p of sortedPlayers) {
+                const unit = (p.score === 1) ? " point. " : " points. ";
+                text += `${p.name} with ${p.score}${unit}`;
+            }
+        }
+
+        this.announcementText.set(text);
+
+        // Speak
+        if ('speechSynthesis' in window) {
+            // Cancel any current speaking
+            window.speechSynthesis.cancel();
+
+            setTimeout(() => {
+                const msg = new SpeechSynthesisUtterance(text);
+                msg.rate = ttsSettings?.rate || 0.8;
+                msg.pitch = ttsSettings?.pitch || 1;
+                msg.lang = lang;
+
+                if (ttsSettings?.voiceURI) {
+                    const voices = window.speechSynthesis.getVoices();
+                    const voice = voices.find(v => v.voiceURI === ttsSettings.voiceURI);
+                    if (voice) msg.voice = voice;
+                }
+
+                window.speechSynthesis.speak(msg);
+            }, 100);
+        } else {
+            console.warn('TTS not supported');
+        }
     }
 }

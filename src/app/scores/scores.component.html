@@ -6,16 +6,17 @@
     </h1>
 
     <div *ngIf="players().length === 0" class="alert alert-danger">
-        No players defined. <a routerLink="/players" class="alert-link">Add Players</a> first.
+        {{ 'SCORES.NO_PLAYERS_PREFIX' | translate }} <a routerLink="/players" class="alert-link">{{
+            'SCORES.NO_PLAYERS_LINK' | translate }}</a> {{ 'SCORES.NO_PLAYERS_SUFFIX' | translate }}
     </div>
 
-    <p *ngIf="running()">Started {{ started() | date:'short' }}</p>
+    <p *ngIf="running()">{{ 'SCORES.STARTED' | translate }} {{ started() | date:'short' }}</p>
 
     <div class="scores-table" *ngIf="players().length > 0">
         <table class="table">
             <thead>
                 <tr>
-                    <th>Round</th>
+                    <th>{{ 'SCORES.ROUND' | translate }}</th>
                     <th *ngFor="let player of players()" [class.success]="winners().includes(player.id)">
                         {{player.name}}
                     </th>
@@ -24,7 +25,7 @@
             </thead>
             <tfoot>
                 <tr>
-                    <th>Totals</th>
+                    <th>{{ 'SCORES.TOTALS' | translate }}</th>
                     <th class="totals number" *ngFor="let player of players()"
                         [class.success]="winners().includes(player.id)">
                         {{totals()[player.id] || 0}}
@@ -55,31 +56,37 @@
 
     <!-- Winners Alert -->
     <div *ngIf="winners().length > 0" class="alert alert-success">
-        <span *ngIf="winners().length > 1">It's a tie!</span>
-        <span *ngIf="winners().length === 1">Winner!</span>
+        <span *ngIf="winners().length > 1">{{ 'SCORES.TIE_TITLE' | translate }}</span>
+        <span *ngIf="winners().length === 1">{{ 'SCORES.WINNER_TITLE' | translate }}</span>
         <!-- Name pipes needed or simple lookup -->
     </div>
 
     <!-- Toolbar -->
     <div *ngIf="players().length > 0" class="toolbar-right">
+        <button class="btn btn-default" (click)="showSettings.set(true)">
+            <i class="fa fa-wrench"></i>
+        </button>
         <button class="btn btn-info" (click)="announce()">
-            <i class="fa fa-volume-up"></i> Announce
+            <i class="fa fa-volume-up"></i> {{ 'SCORES.ANNOUNCE' | translate }}
         </button>
 
         <button class="btn btn-default" *ngIf="!running() && finished()" (click)="resume()">
-            <i class="fa fa-history"></i> Resume
+            <i class="fa fa-history"></i> {{ 'SCORES.RESUME' | translate }}
         </button>
 
         <button class="btn btn-primary" *ngIf="!running()" (click)="start()">
-            <i class="fa fa-caret-square-o-right"></i> Start <span *ngIf="finished()">New</span>
+            <i class="fa fa-caret-square-o-right"></i> {{ 'SCORES.START' | translate }} <span *ngIf="finished()">{{
+                'SCORES.NEW' | translate }}</span>
         </button>
 
         <button class="btn btn-danger" *ngIf="running()" (click)="abort()">
-            <i class="fa fa-trash-o"></i> Abort
+            <i class="fa fa-trash-o"></i> {{ 'SCORES.ABORT' | translate }}
         </button>
 
         <button class="btn btn-success" *ngIf="running()" (click)="finish()">
-            <i class="fa fa-check-square-o"></i> Finish
+            <i class="fa fa-check-square-o"></i> {{ 'SCORES.FINISH' | translate }}
         </button>
     </div>
+
+    <app-settings *ngIf="showSettings()" (close)="showSettings.set(false)"></app-settings>
 </div>

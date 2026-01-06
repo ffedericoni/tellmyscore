@@ -1,0 +1,63 @@
+{
+    "HOME": {
+        "TITLE": "TellMyScore",
+        "INTRO": "Many board and card games require someone to keep the score. But that someone can be your phone!",
+        "ADD_PLAYERS": "Add Players",
+        "TRACK_SCORES": "Track Scores",
+        "FEATURE1_TITLE": "Good to Go!",
+        "FEATURE1_DESC": "Just enter your players' names and start tracking!",
+        "FEATURE2_TITLE": "Forgiving",
+        "FEATURE2_DESC": "You can always go back and edit scores entered. TellMyScore is not here to interfere with your game.",
+        "FEATURE3_TITLE": "Private",
+        "FEATURE3_DESC": "No input is ever transmitted to a server, everything in stays your browser",
+        "FEATURE4_TITLE": "Mobile Ready",
+        "FEATURE4_DESC": "Works on smartphones and tablets as well as it does on desktop browsers.",
+        "FEATURE5_TITLE": "Offline Capable",
+        "FEATURE5_DESC": "Can be added to your home screen and will from then on work even when you have no connection",
+        "FEATURE6_TITLE": "Free",
+        "FEATURE6_DESC": "Free of ads, free of charge. And the code is available on Github, too"
+    },
+    "SCORES": {
+        "NO_PLAYERS_PREFIX": "You have to ",
+        "NO_PLAYERS_LINK": "add some players",
+        "NO_PLAYERS_SUFFIX": " for this to work!",
+        "STARTED": "started",
+        "ROUND": "Round",
+        "TOTALS": "Totals",
+        "TIE": "It's a tie! Winners are",
+        "TIE_TITLE": "It's a tie!",
+        "WINS": "wins!",
+        "WINNER_TITLE": "Winner!",
+        "ANNOUNCE": "Announce",
+        "RESUME": "Resume",
+        "START": "Start",
+        "NEW": " New",
+        "ABORT": "Abort",
+        "FINISH": "Finish"
+    },
+    "GAMES": {
+        "DELETE_CONFIRM_TITLE": "Delete Game from",
+        "PLAYERS": "Players:",
+        "DELETE": "Delete",
+        "CANCEL": "Cancel",
+        "TITLE": "Games",
+        "UNTITLED": "Untitled Game",
+        "NO_GAMES": "No games recorded yet. Go to",
+        "NO_GAMES_LINK": "Scores",
+        "NO_GAMES_SUFFIX": "to start playing!"
+    },
+    "PLAYERS": {
+        "TITLE": "Manage Players",
+        "NO_PLAYERS": "No players defined",
+        "PLACEHOLDER": "enter player's name",
+        "ADD_TITLE": "Add Player",
+        "REMOVE_TOOLTIP": "Remove"
+    },
+    "NAV": {
+        "PLAYERS": "Players",
+        "SCORES": "Scores",
+        "GAMES": "Games",
+        "SETTINGS": "Settings",
+        "NEW_GAME": "New Game"
+    }
+}

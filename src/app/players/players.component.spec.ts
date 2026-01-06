@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PlayersComponent } from './players.component';
 import { StorageService } from '../shared/storage.service';
 import { provideRouter } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('PlayersComponent', () => {
     let component: PlayersComponent;
@@ -10,7 +11,7 @@ describe('PlayersComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [PlayersComponent],
+            imports: [PlayersComponent, TranslateModule.forRoot()],
             providers: [
                 StorageService, // Real service or mock? Real is fine for basic test as it uses localStorage
                 provideRouter([])

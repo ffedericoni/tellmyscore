@@ -1,0 +1,19 @@
+.game-table {
+    margin-bottom: 2rem;
+
+    h3 {
+        margin-top: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+
+        small {
+            font-size: 65%;
+            margin-left: 10px;
+            color: #777;
+        }
+    }
+
+    .toolbar-right {
+        float: right;
+    }
+}

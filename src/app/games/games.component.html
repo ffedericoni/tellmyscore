@@ -1,0 +1,37 @@
+<div class="container">
+    <h1>{{ 'GAMES.TITLE' | translate }}</h1>
+
+    <div *ngIf="games().length === 0" class="alert alert-info">
+        {{ 'GAMES.NO_GAMES' | translate }} <a routerLink="/scores">{{ 'GAMES.NO_GAMES_LINK' | translate }}</a> {{
+        'GAMES.NO_GAMES_SUFFIX' | translate }}
+    </div>
+
+    <div class="game-table delete-animation" *ngFor="let game of games(); let i = index">
+        <h3>
+            <span *ngIf="game.title">{{game.title}}</span>
+            <span *ngIf="!game.title">{{ 'GAMES.UNTITLED' | translate }}</span>
+            <small>{{game.started | date:'mediumDate'}} {{game.started | date:'shortTime'}}</small>
+            <div class="toolbar-right">
+                <button class="btn btn-danger" (click)="deleteGame(i)">
+                    <i class="fa fa-trash-o"></i>
+                </button>
+            </div>
+        </h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th *ngFor="let player of game.players">
+                        {{player.name}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th *ngFor="let player of game.players">
+                        {{getGameTotal(game, player.id)}}
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

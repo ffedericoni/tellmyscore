@@ -5,6 +5,7 @@ import angular from '@analogjs/vite-plugin-angular';
 export default defineConfig(({ mode }) => {
     console.log('Vite config loaded, mode:', mode);
     return {
+        base: '/tellmyscore/',
         plugins: [angular({
             tsconfig: mode === 'test' ? './tsconfig.spec.json' : './tsconfig.app.json'
         })],

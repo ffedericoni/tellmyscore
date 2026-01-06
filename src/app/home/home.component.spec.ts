@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
@@ -8,7 +9,7 @@ describe('HomeComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [HomeComponent],
+            imports: [HomeComponent, TranslateModule.forRoot()],
             providers: [provideRouter([])] // Mock router
         }).compileComponents();
 
@@ -27,6 +28,6 @@ describe('HomeComponent', () => {
 
     it('should render title', () => {
         const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector('h1')?.textContent).toContain('Scorekeeper');
+        expect(compiled.querySelector('h1')?.textContent).toContain('HOME.TITLE');
     });
 });

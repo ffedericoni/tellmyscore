@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -7,7 +8,7 @@ import { StorageService, Player } from '../shared/storage.service';
 @Component({
     selector: 'app-players',
     standalone: true, // v19 default
-    imports: [CommonModule, FormsModule, RouterModule], // Add DragDropModule later if needed
+    imports: [CommonModule, FormsModule, RouterModule, TranslateModule], // Add DragDropModule later if needed
     templateUrl: './players.component.html',
     styleUrls: ['./players.component.scss']
 })

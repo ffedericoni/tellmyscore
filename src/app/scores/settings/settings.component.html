@@ -1,0 +1,45 @@
+<div class="modal-backdrop" (click)="onClose()"></div>
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">TTS Settings</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="onClose()"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Rate (Speed): {{rate}}</label>
+                        <input type="range" class="form-range" min="0.5" max="2" step="0.1" [(ngModel)]="rate"
+                            name="rate">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Pitch: {{pitch}}</label>
+                        <input type="range" class="form-range" min="0" max="2" step="0.1" [(ngModel)]="pitch"
+                            name="pitch">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Language</label>
+                        <select class="form-select" [(ngModel)]="language" name="language">
+                            <option value="en-US">English</option>
+                            <option value="it-IT">Italiano</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Voice</label>
+                        <select class="form-select" [(ngModel)]="voiceURI" name="voiceURI">
+                            <option [ngValue]="null">Default</option>
+                            <option *ngFor="let voice of filteredVoices()" [value]="voice.voiceURI">
+                                {{voice.name}}
+                            </option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" (click)="test()">Test Voice</button>
+                <button type="button" class="btn btn-primary" (click)="onClose()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

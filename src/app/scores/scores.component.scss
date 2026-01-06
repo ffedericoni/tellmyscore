@@ -1,9 +1,32 @@
-// styles
-.scores-table {
-    margin-bottom: 20px;
-}
+@import '../../variables';
 
-.score-input {
-    width: 60px;
-    text-align: center;
+.scores-table {
+    .score-input {
+        width: 80%;
+        min-width: 3em;
+        text-align: right;
+    }
+
+    tr.completed input {
+        border: none;
+        background-color: transparent;
+        -webkit-text-fill-color: $text-color;
+    }
+
+    tr.active td {
+        vertical-align: middle;
+    }
+
+    th.number,
+    td.number {
+        text-align: right;
+    }
+
+    tfoot th.number {
+        padding-right: .7em
+    }
+
+    thead th {
+        text-align: center
+    }
 }
