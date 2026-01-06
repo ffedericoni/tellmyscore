@@ -1,16 +1,17 @@
-.intro {
-  background-image: url('home-bg.jpg');
-  background-size: cover;
-  padding: 40px 0;
-  margin-bottom: 80px;
+.hero {
+  background: linear-gradient(135deg, darken(#428bca, 10%) 0%, #428bca 100%);
+  color: white;
+  padding: 60px 0;
+  margin-bottom: 40px;
   margin-top: -$header-margin-bottom;
   position: relative;
+  text-align: center;
 }
 
 .jumbotron {
-  text-align: center;
   background-color: transparent;
-  color: #333;
+  color: inherit;
+  padding: 0;
 
   h1 {
     margin-bottom: 20px;
