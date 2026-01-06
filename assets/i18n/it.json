@@ -1,0 +1,63 @@
+{
+    "HOME": {
+        "TITLE": "Tieni i punti",
+        "INTRO": "Molti giochi da tavolo e carte richiedono qualcuno che tenga il punteggio. Ma quel qualcuno può essere il tuo telefono!",
+        "ADD_PLAYERS": "Aggiungi Giocatori",
+        "TRACK_SCORES": "Segna Punti",
+        "FEATURE1_TITLE": "Pronto all'uso!",
+        "FEATURE1_DESC": "Inserisci i nomi dei giocatori e inizia a segnare!",
+        "FEATURE2_TITLE": "Indulgente",
+        "FEATURE2_DESC": "Puoi sempre tornare indietro e modificare i punteggi inseriti. TellMyScore non è qui per interferire con il tuo gioco.",
+        "FEATURE3_TITLE": "Privato",
+        "FEATURE3_DESC": "Nessun dato viene mai trasmesso a un server, tutto rimane nel tuo browser",
+        "FEATURE4_TITLE": "Mobile Ready",
+        "FEATURE4_DESC": "Funziona su smartphone e tablet bene come su desktop.",
+        "FEATURE5_TITLE": "Funziona Offline",
+        "FEATURE5_DESC": "Può essere aggiunto alla home screen e funzionerà anche senza connessione",
+        "FEATURE6_TITLE": "Gratis",
+        "FEATURE6_DESC": "Niente pubblicità, niente costi. E il codice è disponibile su Github."
+    },
+    "SCORES": {
+        "NO_PLAYERS_PREFIX": "Devi ",
+        "NO_PLAYERS_LINK": "aggiungere dei giocatori",
+        "NO_PLAYERS_SUFFIX": " affinché funzioni!",
+        "STARTED": "iniziato",
+        "ROUND": "Round",
+        "TOTALS": "Totali",
+        "TIE": "Pareggio! I vincitori sono",
+        "TIE_TITLE": "Pareggio!",
+        "WINS": "vince!",
+        "WINNER_TITLE": "Vincitore!",
+        "ANNOUNCE": "Annuncia",
+        "RESUME": "Riprendi",
+        "START": "Inizia",
+        "NEW": " Nuovo",
+        "ABORT": "Annulla",
+        "FINISH": "Finisci"
+    },
+    "GAMES": {
+        "DELETE_CONFIRM_TITLE": "Elimina partita del",
+        "PLAYERS": "Giocatori:",
+        "DELETE": "Elimina",
+        "CANCEL": "Annulla",
+        "TITLE": "Partite",
+        "UNTITLED": "Partita senza titolo",
+        "NO_GAMES": "Nessuna partita registrata. Vai a",
+        "NO_GAMES_LINK": "Punteggi",
+        "NO_GAMES_SUFFIX": "per iniziare a giocare!"
+    },
+    "PLAYERS": {
+        "TITLE": "Gestisci Giocatori",
+        "NO_PLAYERS": "Nessun giocatore definito",
+        "PLACEHOLDER": "inserisci nome giocatore",
+        "ADD_TITLE": "Aggiungi Giocatore",
+        "REMOVE_TOOLTIP": "Rimuovi"
+    },
+    "NAV": {
+        "PLAYERS": "Giocatori",
+        "SCORES": "Punteggi",
+        "GAMES": "Partite",
+        "SETTINGS": "Impostazioni",
+        "NEW_GAME": "Nuova Partita"
+    }
+}
