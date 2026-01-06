@@ -69,6 +69,12 @@
   .row {
     display: flex;
     flex-wrap: wrap;
+
+    &>[class*='col-'] {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -76,7 +82,7 @@
   background: white;
   border-radius: 12px;
   padding: 30px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s, box-shadow 0.3s;
   height: 100%; // Try to equalize height if containers match
