@@ -72,7 +72,7 @@ angular.module('ngScorekeeper', [
 
         var it_translations = {
             "HOME": {
-                "TITLE": "Scorekeeper",
+                "TITLE": "Tieni i punti",
                 "INTRO": "Molti giochi da tavolo e carte richiedono qualcuno che tenga il punteggio. Ma quel qualcuno può essere il tuo telefono!",
                 "ADD_PLAYERS": "Aggiungi Giocatori",
                 "TRACK_SCORES": "Segna Punti",
