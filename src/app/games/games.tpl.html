@@ -1,9 +1,9 @@
 <script type="text/ng-template" id="confirm_delete.html">
         <div class="modal-header">
-            <h3 class="modal-title">Delete Game from {{game.started | amCalendar}}</h3>
+            <h3 class="modal-title"><span translate="GAMES.DELETE_CONFIRM_TITLE"></span> {{game.started | amCalendar}}</h3>
         </div>
         <div class="modal-body">
-          <p>Players:</p>
+          <p translate="GAMES.PLAYERS">Players:</p>
           <ul>
             <li ng-repeat="player in game.players">
             {{ player.name }} ({{game.totals[player.id]}} points)
@@ -12,35 +12,35 @@
         </div>
         <div class="modal-footer">
             <button class="btn btn-danger" ng-click="ok()"><i
-        class="fa fa-trash-o"></i> Delete</button>
-            <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        class="fa fa-trash-o"></i> <span translate="GAMES.DELETE">Delete</span></button>
+            <button class="btn btn-default" ng-click="cancel()" translate="GAMES.CANCEL">Cancel</button>
         </div>
     </script>
 
 <div class="container">
-<h1>Games</h1>
-<div class="game-table delete-animation" ng-repeat="game in $storage.games">
-  <h3>{{game.title || 'Untitled Game'}} <small>{{game.started | amCalendar}}</small>
-  <div class="toolbar-right">
-    <button class="btn btn-danger" ng-click="open($index)"><i
-    class="fa fa-trash-o"></i></button>
-    </div>
-  </h3>
-  <table class="table">
-    <thead>
-      <tr>
-        <th ng-repeat="player in game.players">
-          {{player.name}}
+  <h1 translate="GAMES.TITLE">Games</h1>
+  <div class="game-table delete-animation" ng-repeat="game in $storage.games">
+    <h3><span ng-show="game.title">{{game.title}}</span><span ng-show="!game.title" translate="GAMES.UNTITLED"></span>
+      <small>{{game.started | amCalendar}}</small>
+      <div class="toolbar-right">
+        <button class="btn btn-danger" ng-click="open($index)"><i class="fa fa-trash-o"></i></button>
+      </div>
+    </h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th ng-repeat="player in game.players">
+            {{player.name}}
           </th>
         </tr>
       </thead>
-    <tbody>
-      <tr>
-        <th ng-repeat="player in game.players">
-          {{game.totals[player.id]}}
+      <tbody>
+        <tr>
+          <th ng-repeat="player in game.players">
+            {{game.totals[player.id]}}
           </th>
         </tr>
       </tbody>
-  </table>
-</div>
+    </table>
+  </div>
 </div>

@@ -2,16 +2,17 @@
 
   <h1 contenteditable ng-model="$storage.title">{{$storage.title || default_title}}</h1>
 
-  <div uib-alert ng-hide="$storage.players" class="alert-danger">You have to <a class="alert-link" ui-sref="players">add
-      some players</a> for this to work!</div>
+  <div uib-alert ng-hide="$storage.players" class="alert-danger"><span translate="SCORES.NO_PLAYERS_PREFIX"></span><a
+      class="alert-link" ui-sref="players" translate="SCORES.NO_PLAYERS_LINK"></a><span
+      translate="SCORES.NO_PLAYERS_SUFFIX"></span></div>
 
-  <p ng-show="running">started <span am-time-ago="$storage.started"></span></p>
+  <p ng-show="running"><span translate="SCORES.STARTED"></span> <span am-time-ago="$storage.started"></span></p>
 
   <div class="scores-table" ng-show="$storage.players">
     <table class="table">
       <thead>
         <tr>
-          <th>Round</th>
+          <th translate="SCORES.ROUND">Round</th>
           <th ng-repeat="player in $storage.players" ng-class="{success: winners.indexOf(player.id) != -1}">
             {{player.name}}
           </th>
@@ -20,7 +21,7 @@
       </thead>
       <tfoot>
         <tr>
-          <th>Totals</th>
+          <th translate="SCORES.TOTALS">Totals</th>
           <th class="totals number" ng-repeat="player in $storage.players"
             ng-class="{success: winners.indexOf(player.id) != -1}">
             {{totals[player.id]}}
@@ -45,29 +46,32 @@
     </table>
   </div>
 
-  <div uib-alert ng-show="winners && winners.length > 1" class="clearfix alert-success">It's a tie! Winners are
+  <div uib-alert ng-show="winners && winners.length > 1" class="clearfix alert-success"><span
+      translate="SCORES.TIE"></span>
     {{winners | playernames}}</div>
   <div uib-alert ng-show="winners && winners.length == 1" class="clearfix alert-success">{{winners[0] | playername}}
-    wins!</div>
+    <span translate="SCORES.WINS"></span>
+  </div>
 
   <div ng-show="$storage.players" class="toolbar-right">
     <button class="btn btn-default" type="button" ng-click="open_settings()" ng-show="running">
       <span class="fa fa-cog"></span>
     </button>
     <button class="btn btn-info" type="button" ng-click="announce_scores()">
-      <span class="fa fa-volume-up"></span> Announce
+      <span class="fa fa-volume-up"></span> <span translate="SCORES.ANNOUNCE">Announce</span>
     </button>
     <button class="btn btn-default" type="button" ng-hide="running || !$storage.finished" ng-click="resume()">
-      <span class="fa fa-history"></span> Resume
+      <span class="fa fa-history"></span> <span translate="SCORES.RESUME">Resume</span>
     </button>
     <button class="btn btn-primary" type="button" ng-hide="running" ng-click="start()">
-      <span class="fa fa-caret-square-o-right"></span> Start<span ng-show="$storage.finished"> New</span>
+      <span class="fa fa-caret-square-o-right"></span> <span translate="SCORES.START">Start</span><span
+        ng-show="$storage.finished" translate="SCORES.NEW"> New</span>
     </button>
     <button class="btn btn-danger" type="button" ng-show="running" ng-click="abort()">
-      <span class="fa fa-trash-o"></span> Abort
+      <span class="fa fa-trash-o"></span> <span translate="SCORES.ABORT">Abort</span>
     </button>
     <button class="btn btn-success" type="button" ng-show="running" ng-click="finish()">
-      <span class="fa fa-check-square-o"></span> Finish
+      <span class="fa fa-check-square-o"></span> <span translate="SCORES.FINISH">Finish</span>
     </button>
   </div>
   <div uib-alert ng-show="announcementText" class="clearfix alert-info" style="clear: both; margin-top: 10px;">

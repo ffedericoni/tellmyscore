@@ -66,6 +66,7 @@ module.exports = {
       'node_modules/moment/min/moment-with-locales.min.js',
       'node_modules/angular-moment/angular-moment.min.js',
       'node_modules/angular-animate/angular-animate.min.js',
+      'node_modules/angular-translate/dist/angular-translate.min.js',
 
       'node_modules/ngstorage/ngStorage.min.js'
     ],
