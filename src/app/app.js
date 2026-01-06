@@ -15,7 +15,6 @@ angular.module('ngScorekeeper', [
 
         var en_translations = {
             "HOME": {
-                "TITLE": "Someone has got to do it",
                 "INTRO": "Many board and card games require someone to keep the score. But that someone can be your phone!",
                 "ADD_PLAYERS": "Add Players",
                 "TRACK_SCORES": "Track Scores",
@@ -72,7 +71,6 @@ angular.module('ngScorekeeper', [
 
         var it_translations = {
             "HOME": {
-                "TITLE": "Qualcuno deve pur farlo",
                 "INTRO": "Molti giochi da tavolo e carte richiedono qualcuno che tenga il punteggio. Ma quel qualcuno può essere il tuo telefono!",
                 "ADD_PLAYERS": "Aggiungi Giocatori",
                 "TRACK_SCORES": "Segna Punti",

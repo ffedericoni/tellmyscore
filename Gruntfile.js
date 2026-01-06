@@ -387,6 +387,8 @@ module.exports = function (grunt) {
         'concat:compile_css', 'copy:compile_assets', 'copy:compile_vendorfonts', 'ngAnnotate', 'concat:compile_js', 'uglify', 'index:compile', 'appcache'
     ]);
 
+    grunt.registerTask('deploy', ['compile', 'gh-pages']);
+
     function filterForJS(files) {
         return files.filter(function (file) {
             return file.match(/\.js$/);
